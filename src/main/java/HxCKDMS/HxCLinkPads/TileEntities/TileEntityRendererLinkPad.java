@@ -1,20 +1,21 @@
 package HxCKDMS.HxCLinkPads.TileEntities;
 
+import HxCKDMS.HxCLinkPads.Reference.References;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-public class PortalTileEntRenderer extends TileEntitySpecialRenderer {
+public class TileEntityRendererLinkPad extends TileEntitySpecialRenderer {
 
-    private final ResourceLocation texturePortal = new ResourceLocation("portals:textures/models/blockLinkpad.png");
-    private final ResourceLocation texturePortal_top_outer = new ResourceLocation("portals:textures/models/blockLinkpad_outer_top.png");
-    private final ResourceLocation texturePortal_top_inner = new ResourceLocation("portals:textures/models/blockLinkpad_inner_top.png");
+    private final ResourceLocation texturePortal = new ResourceLocation(References.MOD_ID + ":textures/models/blockLinkpad.png");
+    private final ResourceLocation texturePortal_top_outer = new ResourceLocation(References.MOD_ID + ":textures/models/blockLinkpad_outer_top.png");
+    private final ResourceLocation texturePortal_top_inner = new ResourceLocation(References.MOD_ID + ":textures/models/blockLinkpad_inner_top.png");
 
     @Override
     public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float alpha) {
-        PortalTileEnt portalTileEntity = (PortalTileEnt)tileEntity;
+        TileEntityLinkPad portalTileEntity = (TileEntityLinkPad)tileEntity;
 
         GL11.glPushMatrix();
         {

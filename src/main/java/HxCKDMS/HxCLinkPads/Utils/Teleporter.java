@@ -9,7 +9,6 @@ import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.world.WorldServer;
 
 public class Teleporter {
-
     private static void transferPlayerToWorld(EntityPlayerMP player, WorldServer oldWorldServer, WorldServer newWorldServer, int x, int y, int z){
         oldWorldServer.theProfiler.startSection("placing");
 

@@ -1,7 +1,7 @@
 package HxCKDMS.HxCLinkPads.Events;
 
-import HxCKDMS.HxCLinkPads.HxCLinkPads;
-import HxCKDMS.HxCLinkPads.TileEntities.PortalTileEnt;
+import HxCKDMS.HxCLinkPads.Registry.Registry;
+import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,8 +15,8 @@ public class Events {
         ItemStack linker = player.getHeldItem();
         NBTTagCompound linkdat = linker.getTagCompound();
         Block block = player.worldObj.getBlock(x, y, z);
-        PortalTileEnt tileEntity = (PortalTileEnt)player.worldObj.getTileEntity(x, y, z);
-		if(block == HxCLinkPads.blockLinkpad && player.getHeldItem().getItem() == HxCLinkPads.itemLinker) {
+        TileEntityLinkPad tileEntity = (TileEntityLinkPad)player.worldObj.getTileEntity(x, y, z);
+		if(block == Registry.blockLinkpad && player.getHeldItem().getItem() == Registry.itemLinker) {
             try {
                 pb = linkdat.getIntArray("PB");
             } catch (Exception e) {

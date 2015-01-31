@@ -1,7 +1,7 @@
 package HxCKDMS.HxCLinkPads.Events;
 
-import HxCKDMS.HxCLinkPads.HxCLinkPads;
-import HxCKDMS.HxCLinkPads.TileEntities.PortalTileEnt;
+import HxCKDMS.HxCLinkPads.Registry.Registry;
+import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemDye;
@@ -14,14 +14,14 @@ public class EventBlockInteract implements EventListener {
 
     @SubscribeEvent
     public void onPlayerInteract(PlayerInteractEvent event){
-        if(event.world.getBlock(event.x, event.y, event.z) == HxCLinkPads.blockLinkpad){
+        if(event.world.getBlock(event.x, event.y, event.z) == Registry.blockLinkpad){
             if (event.entityPlayer.getHeldItem() != null) {
                 Item item = event.entityPlayer.getHeldItem().getItem();
                 int metadata = event.entityPlayer.getHeldItem().getItemDamageForDisplay();
                 int i = item.getMetadata(item.getDamage(new ItemStack(item)));
                 if (item instanceof ItemDye) {
                     try {
-                        PortalTileEnt tileEntity = (PortalTileEnt)event.world.getTileEntity(event.x, event.y, event.z);
+                        TileEntityLinkPad tileEntity = (TileEntityLinkPad)event.world.getTileEntity(event.x, event.y, event.z);
 
                         if(metadata == 1) {
                             if(event.entityPlayer.isSneaking()){

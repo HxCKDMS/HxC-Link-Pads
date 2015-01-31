@@ -11,7 +11,7 @@ import net.minecraft.util.AxisAlignedBB;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
-public class PortalTileEnt extends TileEntity{
+public class TileEntityLinkPad extends TileEntity{
     public int[] NewPos;
     public int[] OtherPos = new int[4];
 

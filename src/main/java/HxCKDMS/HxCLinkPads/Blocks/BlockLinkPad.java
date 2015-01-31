@@ -1,18 +1,18 @@
 package HxCKDMS.HxCLinkPads.Blocks;
 
-import HxCKDMS.HxCLinkPads.TileEntities.PortalTileEnt;
+import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockPortal extends BlockContainer {
+public class BlockLinkPad extends BlockContainer {
 	
-	public BlockPortal(String unlocalizedName, Material material) {
+	public BlockLinkPad(Material material) {
 		super(material);
 		setCreativeTab(CreativeTabs.tabTransport);
-		setBlockName(unlocalizedName);
+		setBlockName("blockLinkPad");
 		setStepSound(soundTypeMetal);
 		setLightLevel(0.4F);
 		setHardness(2.0F);
@@ -21,7 +21,7 @@ public class BlockPortal extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int metadata) {
-        return new PortalTileEnt();
+        return new TileEntityLinkPad();
     }
 
     @Override
