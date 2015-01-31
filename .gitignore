@@ -1,0 +1,10 @@
+# Created by .gitignore support plugin (hsz.mobi)
+eclipse
+gradle
+HxCCore
+HxC-Link-Pads.iws
+HxC-Link-Pads.ipr
+HxC-Link-Pads.iml
+.classpath
+.project
+.settings
