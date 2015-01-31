@@ -16,7 +16,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = References.MOD_ID, name = References.MOD_NAME, version = References.VERSION)
 public class HxCLinkPads {
-    @Mod.Instance("portals")
+    @Mod.Instance(References.MOD_ID)
     public static HxCLinkPads HxCLinkPads;
 
     @SidedProxy(serverSide = References.SERVER_PROXY_LOCATION, clientSide = References.CLIENT_PROXY_LOCATION)
