@@ -11,7 +11,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
-public class Registry {
+public class ModRegistry {
     //blocks
     public static BlockLinkPad blockLinkpad = new BlockLinkPad(Material.iron);
 
