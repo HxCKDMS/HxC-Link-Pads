@@ -1,6 +1,6 @@
 package HxCKDMS.HxCLinkPads.TileEntities;
 
-import net.minecraft.entity.Entity;
+import HxCKDMS.HxCLinkPads.Events.EventLink;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -8,14 +8,18 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 
-import java.util.List;
-
 @SuppressWarnings("unchecked")
 public class TileEntityLinkPad extends TileEntity{
     public int[] NewPos;
-    public int[] OtherPos = new int[4];
-
+    public int[] OtherPos;
+//    private static int timer = 30;
     public int[] RGB = new int[]{0, 0, 0};
+    public int x;
+    public int y;
+    public int z;
+    private int[] coords = new int[3];
+
+    EventLink Link = new EventLink();
 
     @Override
     public void writeToNBT(NBTTagCompound par1) {
@@ -32,6 +36,9 @@ public class TileEntityLinkPad extends TileEntity{
             data[2] = zCoord;
             data[3] = worldObj.provider.dimensionId;
         }
+        par1.setInteger("x", x);
+        par1.setInteger("y", y);
+        par1.setInteger("z", z);
         par1.setIntArray("BoundBlockPos", data);
         par1.setIntArray("RGB", RGB);
     }
@@ -41,23 +48,24 @@ public class TileEntityLinkPad extends TileEntity{
         super.readFromNBT(par1);
         OtherPos = par1.getIntArray("BoundBlockPos");
         RGB = par1.getIntArray("RGB");
+        x = par1.getInteger("x");
+        y = par1.getInteger("y");
+        z = par1.getInteger("z");
     }
 	
-    public void updateEntity(){ if(worldObj != null && !worldObj.isRemote){ Search(); } }
-
-    public void onDataPacket(NetworkManager networkManager, S35PacketUpdateTileEntity packet) { readFromNBT(packet.func_148857_g()); }
-	
-    protected AxisAlignedBB getAreaBoundingBox(float x, float y, float z) { return AxisAlignedBB.getBoundingBox(x, y, z, x+1, y + 1, z+1);}
-
-    public void Search() {
-        List list  = worldObj.getEntitiesWithinAABB(Entity.class, getAreaBoundingBox(xCoord, yCoord, zCoord));
-        for (Entity entity : (List<Entity>) list) {
-            if (!entity.isDead) {
-                entity.setPosition(OtherPos[0], OtherPos[1], OtherPos[2]);
-            }
+    public void updateEntity(){
+        coords[0] = x;
+        coords[1] = y;
+        coords[2] = z;
+        if(worldObj != null && !worldObj.isRemote){
+            Link.Link(coords, worldObj);
         }
     }
-	
+
+    public void onDataPacket(NetworkManager networkManager, S35PacketUpdateTileEntity packet) { readFromNBT(packet.func_148857_g()); }
+
+    protected AxisAlignedBB getAreaBoundingBox(float x, float y, float z) { return AxisAlignedBB.getBoundingBox(x-0.5, y, z-0.5, x+0.5, y + 2, z+0.5);}
+
     public Packet getDescriptionPacket() {
         NBTTagCompound tagCompound = new NBTTagCompound();
         writeToNBT(tagCompound);

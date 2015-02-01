@@ -1,7 +1,5 @@
 package HxCKDMS.HxCLinkPads;
 
-import HxCKDMS.HxCLinkPads.Events.EventBlockInteract;
-import HxCKDMS.HxCLinkPads.Events.Events;
 import HxCKDMS.HxCLinkPads.Proxy.ClientProxy;
 import HxCKDMS.HxCLinkPads.Proxy.ServerProxy;
 import HxCKDMS.HxCLinkPads.Reference.References;
@@ -12,7 +10,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = References.MOD_ID, name = References.MOD_NAME, version = References.VERSION)
 public class HxCLinkPads {
@@ -31,8 +28,7 @@ public class HxCLinkPads {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event){
-        MinecraftForge.EVENT_BUS.register(new Events());
-        MinecraftForge.EVENT_BUS.register(new EventBlockInteract());
+        Registry.init();
 	}
 	
 	@EventHandler
