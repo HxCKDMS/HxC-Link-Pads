@@ -25,6 +25,180 @@ public class HxCLinkPads {
         Registry.preInit();
         cProxy.preInit();
 
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
+    public void preInit(FMLPreInitializationEvent event){
+        Registry.preInit();
+        cProxy.preInit();
         LogHelper.info("Pre initialization has been completed.", References.MOD_NAME);
     }
 
