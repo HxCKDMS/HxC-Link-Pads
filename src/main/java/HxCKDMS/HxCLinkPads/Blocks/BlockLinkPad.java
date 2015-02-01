@@ -28,7 +28,8 @@ public class BlockLinkPad extends BlockContainer {
     public void onBlockAdded(World world, int x, int y, int z) {
         super.onBlockAdded(world, x, y, z);
         TileEntityLinkPad lpad = (TileEntityLinkPad)world.getTileEntity(x, y, z);
-        lpad.x = x; lpad.y = y; lpad.z = z;
+        lpad.x = x; lpad.y = y; lpad.z = z; lpad.AllowUpdate = false;
+        world.markBlockForUpdate(x, y, z);
     }
 
     @Override

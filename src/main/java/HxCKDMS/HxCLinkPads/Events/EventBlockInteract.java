@@ -63,10 +63,12 @@ public class EventBlockInteract implements EventListener {
                     if (mode == 1){
                         mode = 2;
                         LPad.NewPos = pb;
+                        LPad.AllowUpdate = true;
                         world.markBlockForUpdate(event.x, event.y, event.z);
                     } else if (mode == 2){
                         mode = 0;
                         LPad.NewPos = pb;
+                        LPad.AllowUpdate = true;
                         world.markBlockForUpdate(event.x, event.y, event.z);
                     } else{
                         mode = 1;

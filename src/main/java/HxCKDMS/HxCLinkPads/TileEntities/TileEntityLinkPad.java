@@ -6,7 +6,6 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
 
 @SuppressWarnings("unchecked")
 public class TileEntityLinkPad extends TileEntity{
@@ -18,7 +17,8 @@ public class TileEntityLinkPad extends TileEntity{
     public int y;
     public int z;
     private int[] coords = new int[3];
-
+    public boolean AllowUpdate;
+    public boolean Enabled;
     EventLink Link = new EventLink();
 
     public int TargetX;
@@ -41,6 +41,7 @@ public class TileEntityLinkPad extends TileEntity{
             data[2] = zCoord;
             data[3] = worldObj.provider.dimensionId;
         }
+        par1.setBoolean("Enabled", AllowUpdate);
         par1.setInteger("x", x);
         par1.setInteger("y", y);
         par1.setInteger("z", z);
@@ -51,31 +52,28 @@ public class TileEntityLinkPad extends TileEntity{
     @Override
     public void readFromNBT(NBTTagCompound par1) {
         super.readFromNBT(par1);
-        OtherPos = par1.getIntArray("BoundBlockPos");
+        this.OtherPos = par1.getIntArray("BoundBlockPos");
         this.TargetX = OtherPos[0];
         this.TargetY = OtherPos[1];
         this.TargetZ = OtherPos[2];
         this.TargetDim = OtherPos[3];
-        RGB = par1.getIntArray("RGB");
-        x = par1.getInteger("x");
-        y = par1.getInteger("y");
-        z = par1.getInteger("z");
+        this.RGB = par1.getIntArray("RGB");
+        this.x = par1.getInteger("x");
+        this.y = par1.getInteger("y");
+        this.z = par1.getInteger("z");
+        this.Enabled = par1.getBoolean("Enabled");
     }
-	
+
     public void updateEntity(){
         coords[0] = x;
         coords[1] = y;
         coords[2] = z;
-        if(worldObj != null && !worldObj.isRemote){
+        if(worldObj != null && !worldObj.isRemote && Enabled){
             Link.Link(coords, worldObj);
         }
     }
 
     public void onDataPacket(NetworkManager networkManager, S35PacketUpdateTileEntity packet) { readFromNBT(packet.func_148857_g()); }
-
-    protected AxisAlignedBB getAreaBoundingBox(float x, float y, float z) {
-        return AxisAlignedBB.getBoundingBox(x-0.5, y, z-0.5, x+0.5, y + 2, z+0.5);
-    }
 
     public Packet getDescriptionPacket() {
         NBTTagCompound tagCompound = new NBTTagCompound();
