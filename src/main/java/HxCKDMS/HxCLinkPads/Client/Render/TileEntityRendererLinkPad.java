@@ -1,6 +1,7 @@
-package HxCKDMS.HxCLinkPads.TileEntities;
+package HxCKDMS.HxCLinkPads.Client.Render;
 
 import HxCKDMS.HxCLinkPads.Reference.References;
+import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;

@@ -2,9 +2,10 @@
 eclipse
 gradle
 HxCCore
-HxC-Link-Pads.iws
-HxC-Link-Pads.ipr
-HxC-Link-Pads.iml
+*.iws
+*.ipr
+*.iml
 .classpath
 .project
 .settings
+*.db
