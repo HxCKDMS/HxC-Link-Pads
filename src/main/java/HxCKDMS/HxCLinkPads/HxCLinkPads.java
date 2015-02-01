@@ -5,7 +5,6 @@ import HxCKDMS.HxCLinkPads.Proxy.ServerProxy;
 import HxCKDMS.HxCLinkPads.Reference.References;
 import HxCKDMS.HxCLinkPads.Registry.Registry;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -20,18 +19,18 @@ public class HxCLinkPads {
     public static ClientProxy cProxy;
     public static ServerProxy sProxy;
 
-	@EventHandler
+	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event){
         Registry.preInit();
         cProxy.preInit();
     }
 
-	@EventHandler
+	@Mod.EventHandler
 	public void init(FMLInitializationEvent event){
         Registry.init();
 	}
 	
-	@EventHandler
+	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event){
 		
 	}
