@@ -73,7 +73,9 @@ public class TileEntityLinkPad extends TileEntity{
 
     public void onDataPacket(NetworkManager networkManager, S35PacketUpdateTileEntity packet) { readFromNBT(packet.func_148857_g()); }
 
-    protected AxisAlignedBB getAreaBoundingBox(float x, float y, float z) { return AxisAlignedBB.getBoundingBox(x-0.5, y, z-0.5, x+0.5, y + 2, z+0.5);}
+    protected AxisAlignedBB getAreaBoundingBox(float x, float y, float z) {
+        return AxisAlignedBB.getBoundingBox(x-0.5, y, z-0.5, x+0.5, y + 2, z+0.5);
+    }
 
     public Packet getDescriptionPacket() {
         NBTTagCompound tagCompound = new NBTTagCompound();

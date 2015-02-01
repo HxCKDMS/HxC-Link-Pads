@@ -12,6 +12,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 import java.util.EventListener;
 
+@SuppressWarnings("unused")
 public class EventBlockInteract implements EventListener {
 
     @SubscribeEvent
@@ -54,7 +55,6 @@ public class EventBlockInteract implements EventListener {
                         e.printStackTrace();
                     }
                 } else if (item instanceof ItemLinker) {
-                    ItemLinker linker = (ItemLinker)item;
                     NBTTagCompound dat = stack.getTagCompound();
                     int[] pb = dat.getIntArray("PB");
                     int[] pb2 = new int[4];

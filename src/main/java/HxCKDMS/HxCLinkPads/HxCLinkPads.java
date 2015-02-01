@@ -1,5 +1,6 @@
 package HxCKDMS.HxCLinkPads;
 
+import HxCKDMS.HxCCore.Utils.LogHelper;
 import HxCKDMS.HxCLinkPads.Proxy.ClientProxy;
 import HxCKDMS.HxCLinkPads.Proxy.ServerProxy;
 import HxCKDMS.HxCLinkPads.Reference.References;
@@ -23,15 +24,18 @@ public class HxCLinkPads {
 	public void preInit(FMLPreInitializationEvent event){
         Registry.preInit();
         cProxy.preInit();
+
+        LogHelper.info("Pre initialization has been completed.", References.MOD_NAME);
     }
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event){
         Registry.init();
+        LogHelper.info("Initialization has been completed.", References.MOD_NAME);
 	}
 	
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event){
-		
+        LogHelper.info("Post initialization has been completed.", References.MOD_NAME);
 	}
 }
