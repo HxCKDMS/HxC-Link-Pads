@@ -73,6 +73,7 @@ public class TileEntityLinkPad extends TileEntity{
         coords[0] = x;
         coords[1] = y;
         coords[2] = z;
+        worldObj.markBlockForUpdate(x, y, z);
         if(worldObj != null && !worldObj.isRemote && Enabled){
             Link.Link(coords, worldObj);
         }
