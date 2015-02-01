@@ -21,6 +21,11 @@ public class TileEntityLinkPad extends TileEntity{
 
     EventLink Link = new EventLink();
 
+    public int TargetX;
+    public int TargetY;
+    public int TargetZ;
+    public int TargetDim;
+
     @Override
     public void writeToNBT(NBTTagCompound par1) {
         super.writeToNBT(par1);
@@ -47,6 +52,10 @@ public class TileEntityLinkPad extends TileEntity{
     public void readFromNBT(NBTTagCompound par1) {
         super.readFromNBT(par1);
         OtherPos = par1.getIntArray("BoundBlockPos");
+        this.TargetX = OtherPos[0];
+        this.TargetY = OtherPos[1];
+        this.TargetZ = OtherPos[2];
+        this.TargetDim = OtherPos[3];
         RGB = par1.getIntArray("RGB");
         x = par1.getInteger("x");
         y = par1.getInteger("y");

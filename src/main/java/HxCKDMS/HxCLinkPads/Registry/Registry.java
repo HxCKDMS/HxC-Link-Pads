@@ -1,7 +1,7 @@
 package HxCKDMS.HxCLinkPads.Registry;
 
 import HxCKDMS.HxCLinkPads.Blocks.BlockLinkPad;
-import HxCKDMS.HxCLinkPads.Events.EventBlockInteract;
+import HxCKDMS.HxCLinkPads.Events.*;
 import HxCKDMS.HxCLinkPads.Items.ItemLinker;
 import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -26,6 +26,7 @@ public class Registry {
     }
     public static void init(){
         MinecraftForge.EVENT_BUS.register(new EventBlockInteract());
+        MinecraftForge.EVENT_BUS.register(new EventEntityUpdate());
     }
 
     private static void registerBlocks() {
