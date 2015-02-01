@@ -24,7 +24,7 @@ public class HxCLinkPads {
 	public void preInit(FMLPreInitializationEvent event){
         Registry.preInit();
         cProxy.preInit();
-	}
+    }
 
 	@EventHandler
 	public void init(FMLInitializationEvent event){
