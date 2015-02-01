@@ -11,6 +11,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
+@SuppressWarnings("unused")
 @Mod(modid = References.MOD_ID, name = References.MOD_NAME, version = References.VERSION)
 public class HxCLinkPads {
     @Mod.Instance(References.MOD_ID)
