@@ -4,7 +4,7 @@ import HxCKDMS.HxCCore.Utils.LogHelper;
 import HxCKDMS.HxCLinkPads.Proxy.ClientProxy;
 import HxCKDMS.HxCLinkPads.Proxy.ServerProxy;
 import HxCKDMS.HxCLinkPads.Reference.References;
-import HxCKDMS.HxCLinkPads.Registry.Registry;
+import HxCKDMS.HxCLinkPads.Registry.ModRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -20,9 +20,9 @@ public class HxCLinkPads {
     public static ClientProxy cProxy;
     public static ServerProxy sProxy;
 
-	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event){
-        Registry.preInit();
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event){
+        ModRegistry.preInit();
         cProxy.preInit();
 
     public void preInit(FMLPreInitializationEvent event){
@@ -202,14 +202,14 @@ public class HxCLinkPads {
         LogHelper.info("Pre initialization has been completed.", References.MOD_NAME);
     }
 
-	@Mod.EventHandler
-	public void init(FMLInitializationEvent event){
-        Registry.init();
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event){
+        ModRegistry.init();
         LogHelper.info("Initialization has been completed.", References.MOD_NAME);
-	}
-	
-	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent event){
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event){
         LogHelper.info("Post initialization has been completed.", References.MOD_NAME);
-	}
+    }
 }

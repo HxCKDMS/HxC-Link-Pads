@@ -2,7 +2,7 @@ package HxCKDMS.HxCLinkPads.Proxy;
 
 import HxCKDMS.HxCLinkPads.Client.Render.ItemRendererLinkPad;
 import HxCKDMS.HxCLinkPads.Client.Render.TileEntityRendererLinkPad;
-import HxCKDMS.HxCLinkPads.Registry.Registry;
+import HxCKDMS.HxCLinkPads.Registry.ModRegistry;
 import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -14,7 +14,7 @@ public class ClientProxy extends CommonProxy{
     public void preInit() {
         TileEntitySpecialRenderer renderer = new TileEntityRendererLinkPad();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLinkPad.class, renderer);
-        MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Registry.blockLinkpad), new ItemRendererLinkPad(renderer, new TileEntityLinkPad()));
+        MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModRegistry.blockLinkpad), new ItemRendererLinkPad(renderer, new TileEntityLinkPad()));
         super.preInit();
     }
 }
