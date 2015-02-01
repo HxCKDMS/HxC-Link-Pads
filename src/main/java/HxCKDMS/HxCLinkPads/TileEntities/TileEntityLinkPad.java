@@ -64,6 +64,11 @@ public class TileEntityLinkPad extends TileEntity{
         this.Enabled = par1.getBoolean("Enabled");
     }
 
+    @Override
+    public boolean canUpdate() {
+        return super.canUpdate();
+    }
+
     public void updateEntity(){
         coords[0] = x;
         coords[1] = y;

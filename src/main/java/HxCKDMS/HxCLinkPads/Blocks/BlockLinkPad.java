@@ -14,9 +14,10 @@ public class BlockLinkPad extends BlockContainer {
 		setCreativeTab(CreativeTabs.tabTransport);
 		setBlockName("blockLinkPad");
 		setStepSound(soundTypeMetal);
-		setLightLevel(0.4F);
-		setHardness(2.0F);
-		setResistance(20.0F);
+		setHardness(1.0F);
+		setResistance(1600.0F);
+        setLightLevel(1);
+        setLightOpacity(0);
 	}
 
     @Override
