@@ -9,7 +9,6 @@ public class TileEntityLinkPad extends TileEntity{
     public int[] OtherPos;
     public int[] RGB = new int[]{0, 0, 0};
     public boolean AllowUpdate;
-    //public boolean Enabled;
     EventLink Link = new EventLink();
 
     public int TargetDim;
@@ -30,15 +29,7 @@ public class TileEntityLinkPad extends TileEntity{
         this.AllowUpdate = par1.getBoolean("Enabled");
     }
 
-    @Override
-    public boolean canUpdate() {
-        return super.canUpdate();
-    }
-
     public void updateEntity(){
-        //worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-        if(worldObj != null && !worldObj.isRemote && AllowUpdate){
-            Link.Link(new int[]{xCoord, yCoord, zCoord}, worldObj);
-        }
+        if(worldObj != null && !worldObj.isRemote && AllowUpdate) Link.Link(new int[]{xCoord, yCoord, zCoord}, worldObj);
     }
 }
