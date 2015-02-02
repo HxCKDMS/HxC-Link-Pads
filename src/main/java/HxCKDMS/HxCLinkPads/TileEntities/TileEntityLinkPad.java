@@ -4,7 +4,6 @@ import HxCKDMS.HxCLinkPads.Events.EventLink;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
-//@SuppressWarnings("unchecked")
 public class TileEntityLinkPad extends TileEntity{
     public int[] OtherPos;
     public int[] RGB = new int[]{0, 0, 0};
