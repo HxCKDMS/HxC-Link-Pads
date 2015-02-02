@@ -14,11 +14,9 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class EventLink {
     public void Link(int[] coords, World world){
-        world.markBlockForUpdate(coords[0], coords[1], coords[2]);
         List list  = world.getEntitiesWithinAABB(Entity.class, getAreaBoundingBox(coords[0], coords[1], coords[2]));
         TileEntity tile = world.getTileEntity(coords[0], coords[1], coords[2]);
         TileEntityLinkPad lp = (TileEntityLinkPad)tile;
-        lp.getDescriptionPacket();
         for (Entity entity : (List<Entity>) list) {
             NBTTagCompound tag = entity.getEntityData();
             int linkCooldown = tag.getInteger("LinkCooldown");
@@ -28,9 +26,9 @@ public class EventLink {
             }
             if (!entity.isDead && linkCooldown == 0) {
                 tag.setInteger("LinkCooldown", 60);
-                int posx = lp.TargetX;
-                int posy = lp.TargetY;
-                int posz = lp.TargetZ;
+                int posx = lp.OtherPos[0];
+                int posy = lp.OtherPos[1];
+                int posz = lp.OtherPos[2];
                 int posdim = lp.TargetDim;
                 if (entity instanceof EntityPlayerMP) ((EntityPlayerMP)entity).playerNetServerHandler.setPlayerLocation(posx+0.5, posy+1, posz+0.5, entity.rotationYaw, entity.rotationPitch);
                 else if (entity instanceof EntityLiving) ((EntityLiving) entity).setPositionAndUpdate(posx+0.5, posy+1, posz+0.5);

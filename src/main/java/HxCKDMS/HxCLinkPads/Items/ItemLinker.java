@@ -21,6 +21,7 @@ public class ItemLinker extends Item{
 		setMaxDamage(0);
 	}
 
+    //TODO: make item automatically function when pulled out of the creative menu or spawned in.
     @Override
     public void onCreated(ItemStack stack, World world, EntityPlayer player) {
         data = getNBT(stack);
