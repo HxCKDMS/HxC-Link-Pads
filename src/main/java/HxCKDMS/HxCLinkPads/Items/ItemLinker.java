@@ -1,6 +1,6 @@
 package HxCKDMS.HxCLinkPads.Items;
 
-import HxCKDMS.HxCLinkPads.Reference.References;
+import HxCKDMS.HxCLinkPads.Lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -16,7 +16,7 @@ public class ItemLinker extends Item{
     public ItemLinker(){
 		setCreativeTab(CreativeTabs.tabTools);
 		setUnlocalizedName("itemLinker");
-		setTextureName(References.MOD_ID + ":itemLinker");
+		setTextureName(Reference.MOD_ID + ":itemLinker");
 		setMaxStackSize(1);
 		setMaxDamage(0);
 	}

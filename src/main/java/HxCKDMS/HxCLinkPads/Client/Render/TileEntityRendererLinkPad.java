@@ -1,6 +1,6 @@
 package HxCKDMS.HxCLinkPads.Client.Render;
 
-import HxCKDMS.HxCLinkPads.Reference.References;
+import HxCKDMS.HxCLinkPads.Lib.Reference;
 import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -10,9 +10,9 @@ import org.lwjgl.opengl.GL11;
 
 public class TileEntityRendererLinkPad extends TileEntitySpecialRenderer {
 
-    private final ResourceLocation texturePortal = new ResourceLocation(References.MOD_ID + ":textures/models/blockLinkpad.png");
-    private final ResourceLocation texturePortal_top_outer = new ResourceLocation(References.MOD_ID + ":textures/models/blockLinkpad_outer_top.png");
-    private final ResourceLocation texturePortal_top_inner = new ResourceLocation(References.MOD_ID + ":textures/models/blockLinkpad_inner_top.png");
+    private final ResourceLocation texturePortal = new ResourceLocation(Reference.MOD_ID + ":textures/models/blockLinkpad.png");
+    private final ResourceLocation texturePortal_top_outer = new ResourceLocation(Reference.MOD_ID + ":textures/models/blockLinkpad_outer_top.png");
+    private final ResourceLocation texturePortal_top_inner = new ResourceLocation(Reference.MOD_ID + ":textures/models/blockLinkpad_inner_top.png");
 
     @Override
     public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float alpha) {
