@@ -30,9 +30,9 @@ public class EventLink {
                 int posy = lp.OtherPos[1];
                 int posz = lp.OtherPos[2];
                 int posdim = lp.TargetDim;
-                if (entity instanceof EntityPlayerMP) ((EntityPlayerMP)entity).playerNetServerHandler.setPlayerLocation(posx+0.5, posy+1, posz+0.5, entity.rotationYaw, entity.rotationPitch);
-                else if (entity instanceof EntityLiving) ((EntityLiving) entity).setPositionAndUpdate(posx+0.5, posy+1, posz+0.5);
-                else entity.setPosition(posx+0.5, posy+1, posz+0.5);
+                if (entity instanceof EntityPlayerMP) ((EntityPlayerMP)entity).playerNetServerHandler.setPlayerLocation(posx+0.5, posy+0.25, posz+0.5, entity.rotationYaw, entity.rotationPitch);
+                else if (entity instanceof EntityLiving) ((EntityLiving) entity).setPositionAndUpdate(posx+0.5, posy+0.25, posz+0.5);
+                else entity.setPosition(posx+0.5, posy+0.25, posz+0.5);
             }
         }
     }

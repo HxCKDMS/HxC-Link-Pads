@@ -1,8 +1,8 @@
 package HxCKDMS.HxCLinkPads.Client.Render;
 
+import HxCKDMS.HxCLinkPads.Client.Models.ModelLinkPad;
 import HxCKDMS.HxCLinkPads.Lib.Reference;
 import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
-import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -10,9 +10,10 @@ import org.lwjgl.opengl.GL11;
 
 public class TileEntityRendererLinkPad extends TileEntitySpecialRenderer {
 
-    private final ResourceLocation texturePortal = new ResourceLocation(Reference.MOD_ID + ":textures/models/blockLinkpad.png");
-    private final ResourceLocation texturePortal_top_outer = new ResourceLocation(Reference.MOD_ID + ":textures/models/blockLinkpad_outer_top.png");
-    private final ResourceLocation texturePortal_top_inner = new ResourceLocation(Reference.MOD_ID + ":textures/models/blockLinkpad_inner_top.png");
+    private final ResourceLocation texturePortal = new ResourceLocation(Reference.MOD_ID + ":textures/models/LinkPadBase.png");
+    private final ResourceLocation texturePortal_top = new ResourceLocation(Reference.MOD_ID + ":textures/models/LinkPad_top.png");
+    
+    private final ModelLinkPad modelLinkPad = new ModelLinkPad();
 
     @Override
     public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float alpha) {
@@ -20,63 +21,16 @@ public class TileEntityRendererLinkPad extends TileEntitySpecialRenderer {
 
         GL11.glPushMatrix();
         {
-            GL11.glTranslated(x, y, z);
-            Tessellator tessellator = Tessellator.instance;
+            GL11.glScalef(1.0F, 1.0F, 1.0F);
+            GL11.glTranslated(x + 0.5F, y + 0.0F, z + 0.5F);
 
-            //sides
             this.bindTexture(texturePortal);
-            tessellator.startDrawingQuads();
-            {
-                tessellator.addVertexWithUV(0, 0, 1, 1, 1);
-                tessellator.addVertexWithUV(0, 1, 1, 1, 0);
-                tessellator.addVertexWithUV(0, 1, 0, 0, 0);
-                tessellator.addVertexWithUV(0, 0, 0, 0, 1);
 
-                tessellator.addVertexWithUV(1, 1, 1, 0, 1);
-                tessellator.addVertexWithUV(1, 0, 1, 0, 0);
-                tessellator.addVertexWithUV(1, 0, 0, 1, 0);
-                tessellator.addVertexWithUV(1, 1, 0, 1, 1);
+            modelLinkPad.renderPart("mainPad");
 
-                tessellator.addVertexWithUV(0, 0, 0, 0, 1);
-                tessellator.addVertexWithUV(0, 1, 0, 0, 0);
-                tessellator.addVertexWithUV(1, 1, 0, 1, 0);
-                tessellator.addVertexWithUV(1, 0, 0, 1, 1);
-
-                tessellator.addVertexWithUV(0, 1, 1, 0, 1);
-                tessellator.addVertexWithUV(0, 0, 1, 0, 0);
-                tessellator.addVertexWithUV(1, 0, 1, 1, 0);
-                tessellator.addVertexWithUV(1, 1, 1, 1, 1);
-
-                tessellator.addVertexWithUV(0, 0, 1, 0, 1);
-                tessellator.addVertexWithUV(0, 0, 0, 0, 0);
-                tessellator.addVertexWithUV(1, 0, 0, 1, 0);
-                tessellator.addVertexWithUV(1, 0, 1, 1, 1);
-            }
-            tessellator.draw();
-
-            //outer top
-            this.bindTexture(texturePortal_top_outer);
-            tessellator.startDrawingQuads();
-            {
-                tessellator.addVertexWithUV(1, 1, 0, 0, 1);
-                tessellator.addVertexWithUV(0, 1, 0, 0, 0);
-                tessellator.addVertexWithUV(0, 1, 1, 1, 0);
-                tessellator.addVertexWithUV(1, 1, 1, 1, 1);
-            }
-            tessellator.draw();
-
-            //inner top
-            this.bindTexture(texturePortal_top_inner);
-            tessellator.startDrawingQuads();
-            {
-                tessellator.setColorOpaque(portalTileEntity.RGB[0], portalTileEntity.RGB[1], portalTileEntity.RGB[2]);
-
-                tessellator.addVertexWithUV(1 - 0.03125 * 2, 1, 0.03125 * 2, 0, 1);
-                tessellator.addVertexWithUV(0.03125 * 2, 1, 0.03125 * 2, 0, 0);
-                tessellator.addVertexWithUV(0.03125 * 2, 1, 1 - 0.03125 * 2, 1, 0);
-                tessellator.addVertexWithUV(1 - 0.03125 * 2, 1, 1 - 0.03125 * 2, 1, 1);
-            }
-            tessellator.draw();
+            this.bindTexture(texturePortal_top);
+            GL11.glColor3f(portalTileEntity.RGB[0] / 255F, portalTileEntity.RGB[1] / 255F, portalTileEntity.RGB[2] / 255F);
+            modelLinkPad.renderPart("colorPad");
         }
         GL11.glPopMatrix();
     }

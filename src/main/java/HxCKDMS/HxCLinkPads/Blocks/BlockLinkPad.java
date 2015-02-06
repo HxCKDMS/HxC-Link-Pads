@@ -18,6 +18,7 @@ public class BlockLinkPad extends BlockContainer {
 		setResistance(1600.0F);
         setLightLevel(1);
         setLightOpacity(0);
+        setBlockBounds(0F, 0F, 0F, 1F, 0.25F, 1F);
 	}
 
     @Override
@@ -35,5 +36,10 @@ public class BlockLinkPad extends BlockContainer {
     @Override
     public int getRenderType() {
         return -1;
+    }
+
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
     }
 }
