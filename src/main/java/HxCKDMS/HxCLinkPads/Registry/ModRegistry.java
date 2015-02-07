@@ -46,6 +46,6 @@ public class ModRegistry {
         //for refreshing data
         GameRegistry.addShapelessRecipe(new ItemStack(itemLinker), itemLinker);
 
-        GameRegistry.addRecipe(new ItemStack(blockLinkpad,2), "eee", "eoe", "eee", 'e', Items.ender_eye, 'o', Blocks.obsidian);
+        GameRegistry.addRecipe(new ItemStack(blockLinkpad, 2), "opo", "pep", "opo", 'e', Items.ender_eye, 'o', Blocks.obsidian, 'p', Items.ender_pearl);
     }
 }

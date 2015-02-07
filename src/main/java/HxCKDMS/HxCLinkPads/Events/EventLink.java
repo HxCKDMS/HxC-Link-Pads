@@ -29,7 +29,6 @@ public class EventLink {
             int posy = lp.OtherPos[1];
             int posz = lp.OtherPos[2];
             int posdim = lp.TargetDim;
-            System.out.println("meh");
             boolean LinkPad = HxCCore.server.worldServerForDimension(posdim).getTileEntity(posx, posy, posz) instanceof TileEntityLinkPad;
             if (!entity.isDead && linkCooldown == 0 && LinkPad) {
                 tag.setInteger("LinkCooldown", 60);
