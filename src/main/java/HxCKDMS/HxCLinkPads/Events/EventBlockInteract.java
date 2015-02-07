@@ -56,6 +56,9 @@ public class EventBlockInteract implements EventListener {
                     }
                 } else if (item instanceof ItemLinker) {
                     NBTTagCompound dat = stack.getTagCompound();
+                    if(dat == null){
+                        dat = new NBTTagCompound();
+                    }
                     int[] cb; int mode;
                     int[] pb = new int[]{event.x, event.y, event.z, world.provider.dimensionId};
                     try {
@@ -76,6 +79,7 @@ public class EventBlockInteract implements EventListener {
                     } else {
                         mode = 1;
                     }
+                    
                     dat.setIntArray("PB", pb);
                     dat.setInteger("Mode", mode);
                     stack.setTagCompound(dat);
