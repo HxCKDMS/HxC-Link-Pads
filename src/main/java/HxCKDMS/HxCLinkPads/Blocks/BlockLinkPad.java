@@ -4,8 +4,12 @@ import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class BlockLinkPad extends BlockContainer {
 	
@@ -41,5 +45,15 @@ public class BlockLinkPad extends BlockContainer {
     @Override
     public boolean isOpaqueCube() {
         return false;
+    }
+
+    @Override
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
+
+    @Override
+    public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB axisAlignedBB, List list, Entity entity) {
+        super.addCollisionBoxesToList(world, x, y, z, axisAlignedBB.setBounds(x + minX, y + minY, z + minZ, x + maxX, y + maxY, z + maxZ), list, entity);
     }
 }
