@@ -17,14 +17,7 @@ public class EventLink {
     public void Link(int[] coords, World world){
         TileEntity tile = world.getTileEntity(coords[0], coords[1], coords[2]);
         TileEntityLinkPad lp = (TileEntityLinkPad)tile;
-        int nx; int ny; int nz;
-        if (coords[0] >= 0) nx = coords[0] + 1;
-        else nx = coords[0] - 1;
-        if (coords[1] >= 0) ny = coords[1] + 1;
-        else ny = coords[1] - 1;
-        if (coords[2] >= 0) nz = coords[2] + 1;
-        else nz = coords[2] - 1;
-        List list  = world.getEntitiesWithinAABB(Entity.class, getAreaBoundingBox(coords[0], coords[1], coords[2], nx, ny, nz));
+        List list  = world.getEntitiesWithinAABB(Entity.class, getAreaBoundingBox(coords[0], coords[1], coords[2], coords[0]+0.99, coords[1]+0.75, coords[2]+0.99));
         for (Entity entity : (List<Entity>) list) {
             NBTTagCompound tag = entity.getEntityData();
             int linkCooldown = tag.getInteger("LinkCooldown");
@@ -36,6 +29,7 @@ public class EventLink {
             int posy = lp.OtherPos[1];
             int posz = lp.OtherPos[2];
             int posdim = lp.TargetDim;
+            System.out.println("meh");
             boolean LinkPad = HxCCore.server.worldServerForDimension(posdim).getTileEntity(posx, posy, posz) instanceof TileEntityLinkPad;
             if (!entity.isDead && linkCooldown == 0 && LinkPad) {
                 tag.setInteger("LinkCooldown", 60);
@@ -52,7 +46,8 @@ public class EventLink {
         }
     }
 
-    protected AxisAlignedBB getAreaBoundingBox(int mx, int my, int mz, int Mx, int My, int Mz) {
+    protected AxisAlignedBB getAreaBoundingBox(double mx, double my, double mz, double Mx, double My, double Mz) {
+//        System.out.println(String.valueOf(mx) + " " + String.valueOf(my) + " " + String.valueOf(mz) + " " + String.valueOf(Mx) + " " + String.valueOf(My) + " " + String.valueOf(Mz));
         return AxisAlignedBB.getBoundingBox(mx, my, mz, Mx, My, Mz);
     }
 }
