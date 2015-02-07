@@ -54,6 +54,6 @@ public class BlockLinkPad extends BlockContainer {
 
     @Override
     public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB axisAlignedBB, List list, Entity entity) {
-        super.addCollisionBoxesToList(world, x, y, z, axisAlignedBB.setBounds(x + minX, y + minY, z + minZ, x + maxX, y + maxY, z + maxZ), list, entity);
+        super.addCollisionBoxesToList(world, x, y, z, axisAlignedBB, list, entity);
     }
 }
