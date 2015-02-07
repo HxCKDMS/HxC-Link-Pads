@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class BlockLinkPad extends BlockContainer {
-	
 	public BlockLinkPad(Material material) {
 		super(material);
 		setCreativeTab(CreativeTabs.tabTransport);
