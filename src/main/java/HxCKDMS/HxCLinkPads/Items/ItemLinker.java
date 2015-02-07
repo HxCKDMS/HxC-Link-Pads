@@ -21,7 +21,6 @@ public class ItemLinker extends Item{
 		setMaxDamage(0);
 	}
 
-    //TODO: make item automatically function when pulled out of the creative menu or spawned in.
     @Override
     public void onCreated(ItemStack stack, World world, EntityPlayer player) {
         data = getNBT(stack);
@@ -47,14 +46,14 @@ public class ItemLinker extends Item{
         try {
             int[] coords = stack.getTagCompound().getIntArray("PB");
             int mode = stack.getTagCompound().getInteger("Mode");
-            tooltips.add("X:" + coords[0]);
-            tooltips.add("Y:" + coords[1]);
-            tooltips.add("Z:" + coords[2]);
-            tooltips.add("Dim:" + coords[3]);
-            if (mode == 1 || mode == 2) tooltips.add("Mode: Read/Write");
-            else tooltips.add("Mode: Read Only");
-        } catch (Exception e){
-            tooltips.add("\u00A74ERROR! Please put in crafting grid.");
+            tooltips.add("\u00A79X:" + coords[0]);
+            tooltips.add("\u00A79Y:" + coords[1]);
+            tooltips.add("\u00A79Z:" + coords[2]);
+            tooltips.add("\u00A71Dim:" + coords[3]);
+            if (mode == 1 || mode == 2) tooltips.add("\u00A73Mode: Read/Write");
+            else tooltips.add("\u00A73Mode: Read Only");
+        } catch (Exception e) {
+            tooltips.add("\u00A74Nil");
         }
     }
 }

@@ -56,22 +56,27 @@ public class EventBlockInteract implements EventListener {
                     }
                 } else if (item instanceof ItemLinker) {
                     NBTTagCompound dat = stack.getTagCompound();
-                    int[] pb = dat.getIntArray("PB");
-                    int[] pb2 = new int[4];
-                    int mode = dat.getInteger("Mode");
-                    pb2[0] = event.x; pb2[1] = event.y; pb2[2] = event.z; pb2[3] = world.provider.dimensionId;
+                    int[] cb; int mode;
+                    int[] pb = new int[]{event.x, event.y, event.z, world.provider.dimensionId};
+                    try {
+                        cb = dat.getIntArray("PB");
+                        mode = dat.getInteger("Mode");
+                    } catch (Exception ignored) {
+                        cb = new int[]{0,0,0,0};
+                        mode = 0;
+                    }
                     if (mode == 1){
                         mode = 2;
-                        LPad.OtherPos = pb;
+                        LPad.OtherPos = cb;
                         LPad.AllowUpdate = true;
                     } else if (mode == 2){
                         mode = 0;
-                        LPad.OtherPos = pb;
+                        LPad.OtherPos = cb;
                         LPad.AllowUpdate = true;
-                    } else{
+                    } else {
                         mode = 1;
                     }
-                    dat.setIntArray("PB", pb2);
+                    dat.setIntArray("PB", pb);
                     dat.setInteger("Mode", mode);
                     stack.setTagCompound(dat);
                 }

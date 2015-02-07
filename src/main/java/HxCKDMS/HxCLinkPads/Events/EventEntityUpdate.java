@@ -13,7 +13,7 @@ public class EventEntityUpdate {
             EntityPlayer player = (EntityPlayer)event.entityLiving;
             NBTTagCompound tag = player.getEntityData();
             int linkCooldown = tag.getInteger("LinkCooldown");
-            if (linkCooldown != -0) {
+            if (linkCooldown > 0) {
                 linkCooldown--;
                 tag.setInteger("LinkCooldown", linkCooldown);
             }
