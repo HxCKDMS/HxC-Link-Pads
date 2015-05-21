@@ -1,6 +1,6 @@
 package HxCKDMS.HxCLinkPads.Client.Models;
 
-import HxCKDMS.HxCLinkPads.Lib.Reference;
+import HxCKDMS.HxCLinkPads.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.util.ResourceLocation;

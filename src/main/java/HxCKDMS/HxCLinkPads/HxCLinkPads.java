@@ -1,7 +1,6 @@
 package HxCKDMS.HxCLinkPads;
 
 import HxCKDMS.HxCCore.Utils.LogHelper;
-import HxCKDMS.HxCLinkPads.Lib.Reference;
 import HxCKDMS.HxCLinkPads.Proxy.CommonProxy;
 import HxCKDMS.HxCLinkPads.Registry.ModRegistry;
 import cpw.mods.fml.common.Mod;
@@ -9,6 +8,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.config.Configuration;
 
 @SuppressWarnings("unused")
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
@@ -19,8 +19,10 @@ public class HxCLinkPads {
     @SidedProxy(serverSide = Reference.SERVER_PROXY_LOCATION, clientSide = Reference.CLIENT_PROXY_LOCATION)
     public static CommonProxy proxy;
 
+    public static Config Config;
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
+        Config = new Config(new Configuration(event.getSuggestedConfigurationFile()));
         ModRegistry.preInit();
         proxy.preInit();
 
