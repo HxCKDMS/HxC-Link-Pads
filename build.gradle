@@ -22,7 +22,7 @@ group= "HxCKDMS.HxCLinkPads"
 archivesBaseName = "HxCLinkPads"
 
 minecraft {
-    version = "1.7.10-10.13.2.1230"
+    version = "1.7.10-10.13.4.1448-1.7.10"
     assetDir = "eclipse/assets"
 }
 
