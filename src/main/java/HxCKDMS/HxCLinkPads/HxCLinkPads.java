@@ -1,6 +1,6 @@
 package HxCKDMS.HxCLinkPads;
 
-import HxCKDMS.HxCCore.Utils.LogHelper;
+import HxCKDMS.HxCCore.api.Utils.LogHelper;
 import HxCKDMS.HxCLinkPads.Proxy.CommonProxy;
 import HxCKDMS.HxCLinkPads.Registry.ModRegistry;
 import cpw.mods.fml.common.Mod;
@@ -11,7 +11,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
 @SuppressWarnings("unused")
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES)
 public class HxCLinkPads {
     @Mod.Instance(Reference.MOD_ID)
     public static HxCLinkPads HxCLinkPads;

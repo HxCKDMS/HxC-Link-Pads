@@ -61,16 +61,9 @@ public class BlockLinkPad extends BlockContainer {
                 NBTFileIO.setInteger(CustomPlayerData, "PadMode", 1);
             } else if (mode == 1) {
                 LPad.OtherPos = PreviousBlock;
-                LPad.AllowUpdate = true;
-                try {
-                    LPad2 = (TileEntityLinkPad) world.getTileEntity(PreviousBlock[0], PreviousBlock[1], PreviousBlock[2]);
-                } catch (Exception ignored) {
-                    LPad2 = null;
-                }
-                if (LPad2 != null) {
-                    LPad2.OtherPos = CurrentBlock;
-                    LPad2.AllowUpdate = true;
-                }
+                try {LPad2 = (TileEntityLinkPad) world.getTileEntity(PreviousBlock[0], PreviousBlock[1], PreviousBlock[2]);}
+                catch (Exception ignored) {LPad2 = null;}
+                if (LPad2 != null) LPad2.OtherPos = CurrentBlock;
                 NBTFileIO.setInteger(CustomPlayerData, "PadMode", 0);
             }
         }
