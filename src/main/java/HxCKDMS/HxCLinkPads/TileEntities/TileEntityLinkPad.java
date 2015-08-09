@@ -3,7 +3,7 @@ package HxCKDMS.HxCLinkPads.TileEntities;
 import HxCKDMS.HxCCore.HxCCore;
 import HxCKDMS.HxCCore.api.Utils.AABBUtils;
 import HxCKDMS.HxCCore.api.Utils.Teleporter;
-import HxCKDMS.HxCLinkPads.Config;
+import HxCKDMS.HxCLinkPads.Configurations;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -77,14 +77,14 @@ public class TileEntityLinkPad extends TileEntity{
             int posx = lp.OtherPos[0], posy = lp.OtherPos[1], posz = lp.OtherPos[2], posdim = lp.TargetDim;
             boolean LinkPad = HxCCore.server.worldServerForDimension(posdim).getTileEntity(posx, posy, posz) instanceof TileEntityLinkPad;
             if (!entity.isDead && linkCooldown == 0 && LinkPad) {
-                tag.setInteger("LinkCooldown", Config.Delay);
-                if (entity instanceof EntityPlayerMP) {
+                tag.setInteger("LinkCooldown", Configurations.Delay);
+                if (entity instanceof EntityPlayerMP && (entity.isSneaking() || !Configurations.sneaking)) {
                     EntityPlayerMP player = (EntityPlayerMP) entity;
                     if (player.worldObj.provider.dimensionId == posdim) player.playerNetServerHandler.setPlayerLocation(posx + 0.5, posy + 0.25, posz + 0.5, entity.rotationYaw, entity.rotationPitch);
                     else Teleporter.transferPlayerToDimension(player, posdim, posx, posy, posz);
                 } else if (entity instanceof EntityLiving) {
                     if (entity.dimension == posdim) ((EntityLiving) entity).setPositionAndUpdate(posx + 0.5, posy + 0.25, posz + 0.5);
-                    else if (Config.enablewip) {
+                    else if (Configurations.enablewip) {
                         entity.travelToDimension(posdim);
                         entity.setPosition(posx, posy, posz);
                     }
