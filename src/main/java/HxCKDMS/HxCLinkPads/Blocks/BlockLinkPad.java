@@ -24,7 +24,7 @@ public class BlockLinkPad extends BlockContainer {
     public BlockLinkPad(Material material) {
 		super(material);
 		setCreativeTab(CreativeTabs.tabTransport);
-		setBlockName("blockLinkPad");
+		setUnlocalizedName("blockLinkPad");
 		setStepSound(soundTypeMetal);
 		setHardness(1.0F);
 		setResistance(1600.0F);
@@ -93,7 +93,7 @@ public class BlockLinkPad extends BlockContainer {
         if (entityPlayer.getHeldItem() != null && world.getTileEntity(x, y, z) != null) {
             ItemStack stack = entityPlayer.getHeldItem();
             Item item = stack.getItem();
-            int metadata = entityPlayer.getHeldItem().getItemDamageForDisplay();
+            int metadata = entityPlayer.getHeldItem().getCurrentDurability();
             TileEntityLinkPad LPad = (TileEntityLinkPad)world.getTileEntity(x, y, z);
             if (item instanceof ItemDye) {
                 if (metadata == 1) {

@@ -59,7 +59,7 @@ public class TileEntityLinkPad extends TileEntity{
 
     @Override
     public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
-        readSyncableDataFromNBT(pkt.func_148857_g());
+        readSyncableDataFromNBT(pkt.getNbtCompound());
     }
 
     @SuppressWarnings("unchecked")
