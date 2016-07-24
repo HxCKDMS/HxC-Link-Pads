@@ -6,3 +6,6 @@ eclipse
 .classpath
 .project
 .settings
+.gradle/
+build/
+out/
