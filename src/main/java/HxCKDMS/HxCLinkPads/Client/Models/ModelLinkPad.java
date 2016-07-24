@@ -12,14 +12,14 @@ public class ModelLinkPad {
     private IModelCustom modelLinkPad;
 
     public ModelLinkPad() {
-        this.modelLinkPad = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.MOD_ID + ":textures/models/LinkPad.obj"));
+        modelLinkPad = AdvancedModelLoader.loadModel(new ResourceLocation(Reference.MOD_ID + ":textures/models/LinkPad.obj"));
     }
     
-    public void render(){
+    public void render() {
         modelLinkPad.renderAll();
     }
     
-    public void renderPart(String part){
+    public void renderPart(String part) {
         modelLinkPad.renderPart(part);
     }
 }

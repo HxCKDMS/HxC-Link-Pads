@@ -1,7 +1,6 @@
 package HxCKDMS.HxCLinkPads.Registry;
 
 import HxCKDMS.HxCLinkPads.Blocks.BlockLinkPad;
-import HxCKDMS.HxCLinkPads.Events.EventEntityUpdate;
 import HxCKDMS.HxCLinkPads.TileEntities.TileEntityLinkPad;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -13,7 +12,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class ModRegistry {
-    //blocks
     public static BlockLinkPad blockLinkpad = new BlockLinkPad(Material.iron);
 
     public static void preInit(){
@@ -21,13 +19,9 @@ public class ModRegistry {
         registerTileEntities();
         registerCraftingRecipes();
     }
-    public static void init(){
-        MinecraftForge.EVENT_BUS.register(new EventEntityUpdate());
-        //TODO:Move to core...
-    }
 
     private static void registerBlocks() {
-        GameRegistry.registerBlock(blockLinkpad = new BlockLinkPad(Material.iron), "blockLinkPad");
+        GameRegistry.registerBlock(blockLinkpad, "blockLinkPad");
     }
 
     private static void registerTileEntities() {

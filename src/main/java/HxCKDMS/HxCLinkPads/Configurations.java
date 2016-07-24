@@ -1,11 +1,11 @@
 package HxCKDMS.HxCLinkPads;
 
-
 import HxCKDMS.HxCCore.api.Configuration.Config;
 
+@Config
 public class Configurations {
-    @Config.Integer
-    public static int Delay = 100;
-    @Config.Boolean
-    public static boolean sneaking, enablewip;
+    public static short Delay = 120;
+    public static boolean RequireSneaking, PlayersOnly = true;
+    @Config.comment(value = "Valid options, Default/NBT, WorldMap, PlayerMap")
+    public static String LinkType = "Default";
 }

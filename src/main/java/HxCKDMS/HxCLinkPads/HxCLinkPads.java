@@ -1,8 +1,7 @@
 package HxCKDMS.HxCLinkPads;
 
-import HxCKDMS.HxCCore.Configs.Configurations;
+import HxCKDMS.HxCLinkPads.Configurations;
 import HxCKDMS.HxCCore.HxCCore;
-import HxCKDMS.HxCCore.api.Configuration.Category;
 import HxCKDMS.HxCCore.api.Configuration.HxCConfig;
 import HxCKDMS.HxCLinkPads.Proxy.CommonProxy;
 import HxCKDMS.HxCLinkPads.Registry.ModRegistry;
@@ -11,8 +10,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-
-import java.io.File;
 
 @SuppressWarnings("unused")
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES)
@@ -25,23 +22,15 @@ public class HxCLinkPads {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
-        HxCConfig hxCConfig = new HxCConfig();
-        registerNewConfigSys(hxCConfig);
+        HxCConfig hxCConfig = new HxCConfig(Configurations.class, "HxCLinkPads", HxCCore.HxCConfigDir, "cfg");
+        hxCConfig.initConfiguration();
         ModRegistry.preInit();
         proxy.preInit();
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event){
-        ModRegistry.init();
-    }
+    public void init(FMLInitializationEvent event){}
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event){}
-
-
-    public void registerNewConfigSys(HxCConfig config) {
-        config.registerCategory(new Category("General", "General Configs"));
-        config.handleConfig(Configurations.class, new File(HxCCore.HxCConfigDir, "HxCLinkPads.cfg"));
-    }
 }
